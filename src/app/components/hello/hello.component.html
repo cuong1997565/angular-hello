@@ -1,0 +1,53 @@
+<p>Component to view</p>
+<p>Ho ten : {{ name }}</p>
+<p> Age : {{ age }} </p>
+<p> Tinh trang hon nhan : {{ isMarried ? 'Da ket hon' : 'Doc than' }} </p>
+<p>Name object : {{ user.name }} </p>
+<h3> {{ showInfo() }} </h3>
+<img src="{{imageLink}}" alt="" srcset="" width="200">
+<hr>
+<h2> Property Binding </h2>
+<img [src]="imageLink" [width] = "imgWidth" [alt]="'Hinh HotBoy'">
+<hr />
+<input type="text" class="form-control" [value]="name"><br />
+<button
+type="button"
+class="btn btn-primary"
+[disabled] = "isValid">Dang nhap</button><hr />
+<table [attr.border] = "border" [attr.width]="tabWith" >
+<tr>
+  <td>ID</td>
+  <td>Ho ten</td>
+  <td> SDT </td>
+</tr>
+<tr>
+  <td>1</td>
+  <td>ABC</td>
+  <td>123456</td>
+</tr>
+</table>
+<hr>
+<h2>Class Binding</h2>
+
+<table [class.table-bordered]="isBorder">
+  <tr>
+    <td>ID</td>
+    <td>Ho ten</td>
+    <td> SDT </td>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>ABC</td>
+    <td>123456</td>
+  </tr>
+</table>
+<span
+  class="label"
+  [class.label-danger] = "isChecked === 1"
+  [class.label-success] = "isChecked !== 1"
+>label</span><br>
+
+<div
+[style.background-color]="isSpecial ? 'red' : 'cyan'"
+[style.color] ="'white'" >Hoc lap trinh angular 4</div>
+
