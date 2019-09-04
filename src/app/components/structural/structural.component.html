@@ -1,0 +1,38 @@
+<h2 *ngIf="isShow">
+  Ho ten : {{ username }}
+</h2>
+<button type="button" class="btn btn-warning" (click)="onToggle()">Toggle</button>
+<hr />
+<div class="radio">
+  <label style="padding-right: 10px;">
+    <input type="radio" name="rdCheck" (click) = "onChange(true)">
+    Hop le
+  </label>
+  <label>
+    <input type="radio" name="rdCheck" (click) = "onChange(false)">
+    Khong hop le
+  </label>
+</div>
+<h3 *ngIf="isChecked; else elseBlock">Hop le</h3>
+<ng-template #elseBlock>
+  <h3>Khong hop le</h3>
+</ng-template>
+<hr />
+<div class="form-group">
+  <label>Tuoi :</label>
+  <input type="text" class="form-control" [(ngModel)]="age">
+</div>
+<!-- <h3 *ngIf="age >18; else elseBlockData">
+  Du tuoi
+</h3>
+<ng-template #elseBlockData>
+  Chua du tuoi
+</ng-template> -->
+<ng-container *ngIf="age > 18; else elseNotEnough">
+  <h3>Du tuoi</h3>
+</ng-container>
+<ng-template #elseNotEnough>
+  <h2> Chua du tuoi </h2>
+</ng-template>
+
+
